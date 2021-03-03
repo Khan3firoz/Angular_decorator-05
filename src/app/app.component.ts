@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, Inject } from '@angular/core';
+import { MyServiceService } from './my-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'decorators';
+  constructor(@Inject(MyServiceService) myServiceService) {
+    console.log(myServiceService)
+    console.log('This is Component')
+  }
+
+
+// is method decorator auto start after serving apps
+  @HostListener('click', ['$event'])
+  onhostclick(event:Event){
+    alert('HostListner on clicking anywhere')
+  }
+
+  //Parameter Decorator
 }

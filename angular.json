@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "decorators"
+  "defaultProject": "decorators",
+  "cli": {
+    "analytics": false
+  }
 }
